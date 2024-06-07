@@ -5,7 +5,7 @@
 #include "stdlib.h"	
 #include "gd32vf103_gpio.h"
 
-#define USE_HORIZONTAL 3  //Set horizontal or vertical screen display 0 or 1 for vertical screen 2 or 3 for horizontal screen
+#define USE_HORIZONTAL 1  //Set horizontal or vertical screen display 0 or 1 for vertical screen 2 or 3 for horizontal screen
 #define HAS_BLK_CNTL    0
 
 #if USE_HORIZONTAL==0||USE_HORIZONTAL==1
@@ -18,7 +18,8 @@
 #endif
 
 typedef unsigned char u8;
-typedef unsigned int u16;
+// typedef unsigned int u16;
+typedef unsigned short u16;
 typedef unsigned long u32;
 
 
@@ -100,7 +101,7 @@ void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
 void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2, u16 color);
 void LCD_DrawCircle(u16 x0, u16 y0, u8 r, u16 color);
 void LCD_ShowChar(u16 x, u16 y, u8 num, u8 mode, u16 color);
-void LCD_ShowString(u16 x, u16 y, const u8 *p, u16 color);
+void LCD_ShowString(u16 x, u16 y, const u8* p, u16 color);
 u32 mypow(u8 m, u8 n);
 void LCD_ShowNum(u16 x, u16 y, u16 num, u8 len, u16 color);
 void LCD_ShowNum1(u16 x, u16 y, float num, u8 len, u16 color);
